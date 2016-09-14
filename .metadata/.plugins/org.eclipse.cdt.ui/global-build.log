@@ -1,0 +1,42 @@
+19:09:27 **** Incremental Build of configuration Debug for project MSA ****
+make all 
+Building file: ../src/Dispatcher.cpp
+Invoking: GCC C++ Compiler
+g++ -I"/home/user/Desktop/project/final/SocketUtils/src" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Dispatcher.d" -MT"src/Dispatcher.d" -o "src/Dispatcher.o" "../src/Dispatcher.cpp"
+Finished building: ../src/Dispatcher.cpp
+ 
+Building target: MSA
+Invoking: GCC C++ Linker
+g++ -L"/home/user/Desktop/project/final/SocketUtils/Debug" -o "MSA"  ./src/Brocker.o ./src/ChatRoom.o ./src/Dispatcher.o ./src/MessengerServer.o ./src/Users.o ./src/main.o   -lSocketUtils -lpthread
+Finished building target: MSA
+ 
+19:09:30 **** Incremental Build of configuration Debug for project MSA ****
+make all 
+make: Nothing to be done for `all'.
+19:09:35 **** Incremental Build of configuration Debug for project MCA ****
+make all 
+make: Nothing to be done for `all'.
+14:28:44 **** Build of configuration Debug for project MSA ****
+make all 
+make: Nothing to be done for `all'.
+14:29:24 **** Build of configuration Debug for project MCA ****
+make all 
+make: Nothing to be done for `all'.
+12:52:57 **** Build of configuration Debug for project MSA ****
+make all 
+make: Nothing to be done for `all'.
+12:55:10 **** Build of configuration Debug for project MCA ****
+make all 
+make: Nothing to be done for `all'.
+12:55:27 **** Incremental Build of configuration Debug for project MSA ****
+make all 
+make: Nothing to be done for `all'.
+12:55:33 **** Incremental Build of configuration Debug for project MCA ****
+make all 
+make: Nothing to be done for `all'.
+12:56:40 **** Incremental Build of configuration Debug for project MSA ****
+make all 
+make: Nothing to be done for `all'.
+12:56:47 **** Incremental Build of configuration Debug for project MCA ****
+make all 
+make: Nothing to be done for `all'.

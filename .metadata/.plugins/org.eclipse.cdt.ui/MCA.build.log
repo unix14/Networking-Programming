@@ -1,0 +1,6 @@
+12:56:47 **** Incremental Build of configuration Debug for project MCA ****
+make all 
+make: Nothing to be done for `all'.
+
+12:56:48 Build Finished (took 201ms)
+

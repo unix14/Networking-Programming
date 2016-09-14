@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;MSA/users.txt&apos; to &apos;userlist.txt&apos;" description="Rename resource &apos;users.txt&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="users.txt" name="userlist.txt" stamp="1470500560137" updateReferences="true"/>
+</session>

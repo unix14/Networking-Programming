@@ -1,0 +1,105 @@
+
+#include <iostream>
+#include "MessengerClient.h"
+
+#define MAX_MSG_INPUT 1024
+
+using namespace std;
+using namespace npl;
+
+void help();
+
+int main() {
+	cout << "Messenger Client Application" << endl<<endl;
+	MessengerClient * client = new MessengerClient();
+	help();							//Print commands
+	string msg;
+
+	char input[MAX_MSG_INPUT]; 		//input from user
+	string command;					// command from user
+
+	while (true) {
+		msg.clear();
+		command.clear();
+
+		cin >> command;
+		if (command == "c") {
+			string ip;
+			cin >> ip;
+			client->connect(ip);
+		}else if (command == "login") {
+			string user;
+			cin >> user;
+			string password;
+			cin >> password;
+			client->login(user, password);
+		}else if (command == "register") {
+			string user;
+			cin >> user;
+			string password;
+			cin >> password;
+			client->registerUser(user, password);
+		}else if (command == "lu") {
+			client->listUsers();
+		}else if (command == "lcu") {
+			client->listConnectedUsers();
+
+		}else if (command == "lr") {
+			client->listRooms();
+
+		}else if (command == "lru") {
+			string roomName;
+			cin >> roomName;
+			client->listRoomUsers(roomName);
+		}else if (command == "or") {
+			string roomName;
+			cin >> roomName;
+			client->enterRoom(roomName);
+		}else if (command == "l") {
+			client->printClientStatus();
+		}else if (command == "cr") {
+			client->closeCurrentRoom();
+		}else if (command == "o") {
+			string peerUser;
+			cin >> peerUser;
+			client->openSession(peerUser);
+		}else if (command[0] == "s"){
+			getline(std::cin, msg);
+			if (msg.length() > 0 && msg[0] == ' ')
+				msg.erase(0, 1);
+			client->send(msg);
+		}else if (command[0] == "cs") {
+			client->closeSessionOrExitRoom();
+		}else if (command[0] == "d") {
+			client->disconnect();
+		}else if (command == "help"){
+        	help();
+        }else if (command[0] == "x") {
+			client->exit();
+			break;
+		}else {
+			cout << "wrong input" << endl;
+		}
+	}
+	cout << "messenger was closed" << endl;
+	return 0;
+}
+
+void help() {
+	cout << "c <ip> - Connect to Server" << endl
+	 << "login <user> <password> - Log in to Server" << endl
+	 << "register <user> <password> - Register to Server" << endl<<endl
+	 << "lu - List all Users from Server" << endl
+	 << "lcu - List all Connected Users from Server" << endl
+	 << "lr - List Rooms available in Server" << endl
+	 << "lru <room name> - List Users in a Room " << endl<<endl
+	 << "o <user> - Open Session with user" << endl
+	 << "or <room name> - Open a Room"<< endl
+	 << "s <message> - Send Message" << endl
+	 << "cs - Close Session / Exit room " << endl
+	 << "cr - Close Room [Admin only]" << endl<<endl
+	 << "l - Print User status" << endl
+	 << "help - Print Commands"<<endl
+	 << "d - Disconnect" << endl
+	 << "x - Exit" << endl;
+}
